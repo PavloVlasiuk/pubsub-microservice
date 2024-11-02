@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis:latest
+    restart: always
+    command: redis-server
+    volumes:
+      - redis:/var/lib/redis
+    ports:
+      - 6379:6379
+    networks:
+      - pubsub
+
+volumes:
+  redis:
+
+networks:
+  pubsub:
+    driver: bridge
