@@ -4,6 +4,7 @@ import { LoggerModule, Params } from 'nestjs-pino';
 
 import { AppConfigModule, AppConfigService } from './config';
 import { RedisModule } from './redis/redis.module';
+import { TopicsModule } from './topics/topics.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { RedisModule } from './redis/redis.module';
     }),
     EventEmitterModule.forRoot(),
     RedisModule,
+    TopicsModule,
   ],
 })
 export class AppModule {}
